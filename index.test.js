@@ -1,46 +1,43 @@
-import { add } from "./index";
-test('adds undefined + 2 to equal NaN', () => {
+import { add , addString , toNumber, filterOrange } from "./index";
+
+test('Input undefined + 2 in add return NaN', () => {
   expect(add(undefined, 2)).toBe(NaN);
 });
 
 
 // lesson 1
-import { addString } from "./index";
 describe("addString", () => {
-  it('addString a + b equal "ab" ', () => {
+  it('Input "a" + "b" in addString return "ab"', () => {
     expect(addString('a', 'b')).toBe('ab');
   });
-  it('addString a + b equal  a1', () => {
+  it('Input "a" + 1 in addString return "a1"', () => {
     expect(addString('a', 1)).toBe('a1');
   });
-  it('addString a + 1 b equal -1', () => {
+  it('Input 1 + 1 in addString return -1', () => {
     expect(addString(1, 1)).toBe(-1);
   });
 })
 
 // lesson2
-import { toNumber } from "./index";
 describe("toNumber", () => {
-  it('toNumber 0.1 equal 0', () => {
+  it('Input 0.1 in toNumber return 0', () => {
     expect(toNumber(0.1)).toBe(0);
   });
-  it('toNumber a equal NaN', () => {
+  it('Input "a" in toNumber return NaN', () => {
     expect(toNumber('a')).toBe(NaN);
   });
-  it('toNumber 1000a equal 1000', () => {
+  it('Input "1000a" in toNumber return 1000.', () => {
     expect(toNumber('1000a')).toBe(1000);
   });
 });
 
-
 // lesson3
-import { filterOrange } from "./index";
 const fruit = ["orange", "apple", "peach"];
 describe("filterOrange", () => {
-  it('filterOrange equal orange', () => {
+  it('Input contain array contain orange, array contain orange is return.', () => {
     expect(filterOrange(fruit)).toContain('orange');
   });
-  it('filterOrange no orange', () => {
+  it('Input does not contain orange, return an error', () => {
     expect(() => {
       filterOrange(false);
     }).toThrow();
