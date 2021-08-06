@@ -32,15 +32,16 @@ describe("toNumber", () => {
 });
 
 // lesson3
+// lesson3
 const fruit = ["orange", "apple", "peach"];
 describe("filterOrange", () => {
-  it('Input contain array contain orange, array contain orange is return.', () => {
+  it('If array containing orange is passed, array containing orange return.', () => {
     expect(filterOrange(fruit)).toContain('orange');
   });
-  it('Input does not contain orange, return an error', () => {
+  it('If the input does not contain orange, return an error', () => {
     expect(() => {
       filterOrange(false);
-    }).toThrow();
+    }).toThrow(TypeError);
   });
 });
 
